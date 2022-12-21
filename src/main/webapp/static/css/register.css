@@ -1,0 +1,98 @@
+#registerBody {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background: url("../../static/imgs/regist-bg.png") center no-repeat;
+    background-size: cover;
+}
+
+.container {
+    margin: auto;
+    width: 1170px;
+    height: 100vh;
+    text-align: center;
+}
+.p1 {
+    margin: 40px auto 10px;
+    color: white;
+    font-size: 40px;
+}
+.register {
+    text-align: center;
+    margin: auto;
+    width: 380px;
+    background-color: #fff;
+    -webkit-border-radius:5px;
+
+}
+#register_form {
+    text-align: center;
+    height: 520px;
+}
+.registerImg {
+    margin-top: 20px;
+    background-size: cover;
+    height: 100px;
+    z-index: 20;
+}
+.input1 {
+    display: block;
+    margin-left: 60px;
+    margin-bottom: 10px;
+    -webkit-border-radius:5px;
+    outline: none;
+    border: 0px;
+    height: 30px;
+    width: 70%;
+    background: #EAEAEC;
+}
+#register_form span {
+    display: block;
+    height: 20px;
+    font-size: 10px;
+    text-align: left;
+    padding-left: 60px;
+    margin: auto;
+    display: block;
+    color: red;
+}
+.imgDiv {
+    overflow: hidden;
+    display: block;
+    margin: 0 60px 10px;
+}
+.code {
+    float: left;
+    width: 60%;
+    height: 40px;
+}
+.flushed {
+    float: right;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+#dynamicalCode {
+    display: inline-block;
+    margin-bottom: 10px;
+    -webkit-border-radius:5px;
+    outline: none;
+    border: 0px;
+    height: 30px;
+    width: 55%;
+    background: #EAEAEC;
+}
+#registerButton {
+    cursor: pointer;
+    color: white;
+    height: 50px;
+    width: 60%;
+    background: #2368de;
+    outline: none;
+    border: 0px;
+    border-radius: 4px;
+    font-size: 20px;
+    letter-spacing: 10px;
+}

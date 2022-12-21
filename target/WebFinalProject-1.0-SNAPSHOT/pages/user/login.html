@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>统一身份认证</title>
+
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/static/css/style.css}"  href="../../static/css/style.css">
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script th:src="@{/static/js/showWeather.js}" src="static/js/showWeather.js"></script>
+    <script th:src="@{/static/js/tipInfo.js}" src="static/js/tipInfo.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            let $codeImg1 = $("#login1").find(".codeImg");
+            let $codeImg2 = $("#login2").find(".codeImg");
+           $(".flushed").each(function (index){
+               $(this).click(function () {
+                   if(index==0){
+                       $codeImg1.attr("src","/WebFinalProject/kaptcha.jpg?d="+Math.random());
+                   }
+                   else if (index==1){
+                       $codeImg2.attr("src","/WebFinalProject/kaptcha.jpg?d="+Math.random());
+                   }
+               });
+           });
+        });
+    </script>
+</head>
+<body id="loginBody">
+<!--内容-->
+<div class="container">
+    <!--放置中南logo-->
+    <div class="logo">
+        <img th:src="@{/static/imgs/CSULogo.png}" alt="" src="static/imgs/CSULogo.png">
+        <span th:text="统一身份认证">统一身份认证</span>
+    </div>
+
+    <!--显示天气信息的div-->
+    <div class="showWeather">
+        <!--天气的一些具体信息-->
+        <div id="showTop">
+            <div id="showTopL">
+                <!--当前温度-->
+                <p>3℃</p>
+                <div>
+                    <img src="/WebFinalProject/static/imgs/locationIcon.png" alt=""
+                         style="width: 30px;height: 30px;float:left;">
+                    <!--地区-->
+                    <span>
+                        莆田市
+                    </span>
+                    <i style="margin-left: 5px;padding: 2px 0;width: 30px;color: white;height: 30px;vertical-align: middle;display: inline-block;">
+                        良
+                    </i>
+                </div>
+            </div>
+            <div id="showTopR">
+                <div style="overflow:hidden;">
+                    <img src="static/imgs/weather/rainy.png" alt="">
+
+                    <!--天气类型-->
+                    <span class="weaType">
+                    Sunny
+                    </span>
+                </div>
+
+                <!--日+星期几-->
+                <span class="date">星期四</span>
+            </div>
+            <!--清除浮动带来的布局影响-->
+            <div style="clear: both"></div>
+            <div id="showTopB">
+                <div>
+                    最高温度：<span>xxxx</span>
+                </div>
+                <div>
+                    最低温度：<span>xxxx</span>
+                </div>
+                <div>
+                    风力风向：<span>xxxx</span>
+                </div>
+                <div>
+                    湿度：<span>xxxx</span>
+                </div>
+            </div>
+        </div>
+
+        <!--下方显示具体日期对应的天气  内容由js代码改变-->
+        <div id="showMiddle">
+            <span>星期一</span>
+            <span>星期一</span>
+            <span>星期一</span>
+            <span>星期一</span>
+        </div>
+        <div id="showBottom">
+            <img th:src="@{/static/imgs/weather/rainy.png}" src="../../static/imgs/weather/rainy.png" alt="">
+            <img th:src="@{/static/imgs/weather/rainy.png}" src="../../static/imgs/weather/rainy.png" alt="">
+            <img th:src="@{/static/imgs/weather/rainy.png}" src="../../static/imgs/weather/rainy.png" alt="">
+            <img th:src="@{/static/imgs/weather/rainy.png}" src="../../static/imgs/weather/rainy.png" alt="">
+
+        </div>
+    </div>
+
+
+
+    <!--引入登录判断js   判断输入为不为空或是否符合规定-->
+
+    <!--右边的登录窗口-->
+    <div id="rightLoginDiv">
+        <div class="main">
+            <script  th:src="@{/static/js/changeHeader.js}" src="static/js/changeHeader.js" type="text/javascript"></script>
+            <div class="tabHead">
+                <span class="specialSp">
+                    账号密码登录
+                </span>
+                <span>
+                    手机验证登录
+                </span>
+            </div>
+
+            <!--表单div-->
+            <!--第一个是账号密码登录div-->
+            <div class="login_form" id="login1">
+                <form th:action="@{/user}" method="post" action="http://localhost:8080/WebFinalProject/user">
+
+                    <!--这个隐藏域  表示这个表单提交给处理 通过账号密码登录  的servelt-->
+                    <input type="hidden" name="action" value="loginById">
+
+
+                    <div class="loginDiv">
+                           <span>
+                                 <img th:src="@{/static/imgs/loginIcon.png}"
+                                      src="../../static/imgs/loginIcon.png">
+                           </span>
+                        <input type="text" name="username" placeholder="请输入账号" class="input1" id="loginId" th:value="${param.username}">
+                    </div>
+                    <div class="loginDiv">
+                           <span>
+                                 <img th:src="@{/static/imgs/passwordIcon.png}"
+                                      src="../../static/imgs/passwordIcon.png">
+                           </span>
+                        <input type="password" name="password" placeholder="请输入密码" class="input1" th:value="${param.password}">
+                    </div>
+                    <div class="loginDiv" style="border: none">
+
+                        <input type="text" name="code" placeholder="请输入验证码"
+                               class="code1 input1" >
+                        <img th:src="@{'/kaptcha.jpg?d='+${#dates.format(#dates.createNow(),'yyyy-MM-dd HH:mm')}}"
+                             class="codeImg">
+                        <img th:src="@{/static/imgs/flushed.png}"  src="../../static/imgs/flushed.png" class="flushed">
+                    </div>
+
+
+                    <!--用于显示提示信息 如 账号密码错误还是验证码错误-->
+                    <div style="margin: auto;width: 80%;height: 20px">
+                        <span th:text="${#request.getAttribute('errMsg')}" class="tipInfo" ></span>
+                    </div>
+                    <div class="loginDiv">
+                        <input type="submit" value="登录" >
+                    </div>
+                </form>
+            </div>
+
+
+            <!--这个是 手机验证登录div-->
+            <script th:src="@{/static/js/sendMsg.js}"></script>
+            <div class="login_form"   style="display:none;" id="login2">
+                <form  method="post"  th:action="@{/user}">
+
+                    <!--这个隐藏域  表示这个表单提交给处理 通过手机号码登录  的servelt-->
+                    <input type="hidden" name="action" value="loginByPhone">
+                    <div class="loginDiv">
+                           <span>
+                                 <img th:src="@{/static/imgs/loginIcon.png}"
+                                      src="../../static/imgs/loginIcon.png">
+                           </span>
+                        <input type="text" name="phoneNum" placeholder="请输入手机号码" class="input1" id="phoneNum">
+                    </div>
+                    <!--验证码input-->
+                    <div class="loginDiv" style="border: none">
+
+                        <input type="text" name="code" placeholder="请输入验证码"
+                               class="code1 input1">
+                        <img class="codeImg">
+                        <img th:src="@{/static/imgs/flushed.png}" src="../../static/imgs/flushed.png" class="flushed">
+                    </div>
+                    <!--动态获取手机验证码-->
+
+                    <div class="loginDiv">
+                           <span>
+                                 <img th:src="@{/static/imgs/captcha1.png}"
+                                      src="../../static/imgs/captcha1.png">
+                           </span>
+                        <input type="text" name="dynamicalCode" placeholder="请输入短信动态码" class="input1" id="dynamicalCode">
+
+                        <!--这里要修改button的type，不然默认是submit类似会提交表单-->
+                        <button  id="sendMsg" type="button">发送</button>
+                    </div>
+
+                    <!--用于显示提示信息 如 账号密码错误还是验证码错误-->
+                    <div style="margin: auto;width: 80%;height: 20px">
+                        <span th:text="${#request.getAttribute('errMsg')}" class="tipInfo"></span>
+                    </div>
+
+                    <div class="loginDiv">
+                        <input type="button" value="登录" id="AjaxLogin">
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="otherOptions">
+                <a th:href="@{'/user?action='+'toRegister'}" target="_blank"><span class="spanOpt">账号注册</span></a>
+                <a th:href="@{'/user?action='+'toChangePassword'}">
+                    <span class="spanOpt" >忘记密码</span>
+                </a>
+                <span class="spanOpt">修改密码</span>
+            </div>
+            <div class="bottom1">
+                <span>其他登录方式</span>
+                <img th:src="@{/static/imgs/QQIcon.png}" src="../../static/imgs/QQIcon.png">
+                <img th:src="@{/static/imgs/WechatIcon.png}" src="../../static/imgs/WechatIcon.png">
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

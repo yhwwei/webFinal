@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" th:href="@{/static/css/register.css}" href="../../static/css/register.css">
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script th:src="@{/static/js/register.js}" src="../../static/js/register.js"></script>
+</head>
+<body id="registerBody">
+<div class="container">
+    <p class="p1">REGISTER</p>
+    <div class="register">
+        <div>
+            <img th:src="@{/static/imgs/CSULogo2.png}" src="../../static/imgs/CSULogo2.png" class="registerImg">
+        </div>
+
+
+        <form th:action="@{/user}" method="post" action="http://localhost:8080/WebFinalProject/user"
+              id="register_form">
+            <input type="hidden" name="action" value="register">
+            <span>*用户名长度不少于三位</span>
+            <input type="text" name="username" placeholder="请输入注册用户名" class="input1" id="username">
+            <span>*请输入11位手机号码</span>
+            <input type="text" name="phoneNum" placeholder="请输入手机号或者邮箱" class="input1" id="phoneNum">
+
+            <span>*密码长度7~15位</span>
+            <input type="password" name="password" placeholder="请输入密码" class="input1" id="password">
+            <span>*确认密码</span>
+
+            <input type="password" name="confirmPwd" placeholder="请确认密码" class="input1" id="confirmPwd">
+            <span>*验证码</span>
+            <input type="text" name="code" placeholder="请输入验证码"
+                   class="input1" id="code">
+            <div class="imgDiv">
+                <img th:src="@{'/kaptcha.jpg?d='+${#dates.format(#dates.createNow(),'yyyy-MM-dd HH:mm')}}" class="code">
+                <img th:src="@{/static/imgs/flushed.png}" src="../../static/imgs/flushed.png" class="flushed">
+            </div>
+            <span>*短信验证码</span>
+            <input type="text" name="dynamicalCode" placeholder="请输入短信动态码"
+                   id="dynamicalCode">
+            <button  id="sendMsg" type="button">发送</button>
+            <span ></span>
+            <input type="button" value="注册" id="registerButton">
+
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理模块</title>
+    <link rel="stylesheet" href="../../static/css/manager.css" th:href="@{/static/css/manager.css}">
+</head>
+<body>
+<div id="leftMenu" class="left-side sticky-left-side">
+    <img src="../../static/imgs/CSULogo.png" style="width: 200px;margin:10px 0 0 10px"
+         th:src="@{/static/imgs/CSULogo.png}">
+    <div class="managerTable">
+        <a href="#">
+            <i></i>
+            <span>Data Tables</span>
+        </a>
+        <ul class="sub-menu-list">
+            <li><a href="">用户显示</a></li>
+            <li><a href="">待开发</a></li>
+            <li><a href="">待开发</a></li>
+            <li><a href="">待开发</a></li>
+            <li><a href="">待开发</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main-content">
+    <div class="header-section">
+        <form style="display: inline-block" th:action="@{/manager}" action="http://localhost:8080/WebFinalProject/manager">
+            <input type="hidden" name="action" value="toShowUsers">
+            <input type="text" id="" name="keyboard" placeholder="输入搜索内容" class="form-control"
+                   th:value="${param.keyboard}">
+            <label style="line-height: 50px; margin-left: 10px">搜索类型</label>
+            <select name="selectType">
+                <option value="username" th:selected="${{param.selectType}} eq 'username'">username</option>
+                <option value="phoneNum" th:selected="${{param.selectType}} eq 'phoneNum'">phoneNum</option>
+            </select>
+            <input type="submit" value="查询">
+        </form>
+        <div class="showUser">
+            <img src="../../static/imgs/userIcon.jpg" alt="" th:src="@{/static/imgs/userIcon.jpg}">
+            <span th:text="${session.user.username}"></span>
+        </div>
+    </div>
+    <div class="wrapper">
+        <header class="panel-heading">
+            用户信息
+        </header>
+        <div class="panel-body">
+            <table>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>username</th>
+                    <th>phoneNum</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="user,userStat:${#request.getAttribute('page').objs}">
+                    <td th:text="${userStat.index}+1+${#request.getAttribute('page').pageNo-1}*5"></td>
+                    <td th:text="${user.username}"></td>
+                    <td th:text="${user.phoneNum}"></td>
+                    <td>
+                        <a th:href="@{'/manager?'+'action=deleteUser&username='+${user.username}+'&selectType='
+                        +${#request.getAttribute('page').selectType}+'&keyboard='+${#request.getAttribute('page').keyboard}
+                        +'&pageNo='+${#request.getAttribute('page').pageNo}}"
+                           class="btnDelete" type="button">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <script type="text/javascript">
+                $(function () {
+                    $("a.btnDelete").click(function () {
+                        return confirm("确定要删除【"+$($(this).parent().parent().find("td")[1]).text()+"】?");
+                    });
+                });
+            </script>
+        </div>
+        <div class="panel-page">
+            <div style="display: inline-block">
+                当前第<span th:text="${#request.getAttribute('page').pageNo}"></span>页
+                总计 <span th:text="${#request.getAttribute('page').pageTotal}"></span>页
+                共<span th:text="${#request.getAttribute('page').itemsTotal}"></span>条记录
+            </div>
+            <div class="pageDiv">
+                <ul th:with="pageNo = ${#request.getAttribute('page').pageNo}">
+                    <!--判断显示上一页-->
+                    <li th:if="${#request.getAttribute('page').pageNo gt 1}">
+                        <a th:href="@{${#request.getAttribute('page').url}+'&pageNo='+${#request.getAttribute('page').pageNo-1}}"><<</a>
+                    </li>
+                    <li th:each="pageNum:${#numbers.sequence(startPage,endPage)}"
+                        th:with="startPage = ${#request.getAttribute('startPage')},
+                        endPage=${#request.getAttribute('endPage')}"
+                        th:class="${pageNum == pageNo?'indexPage':''}">
+
+                        <a th:href="@{${#request.getAttribute('page').url}+'&pageNo='+${pageNum}}" th:text="${pageNum}"></a>
+                    </li>
+
+
+                    <!--判断显示下一页-->
+                    <li th:if="${pageNo lt #request.getAttribute('page').pageTotal}">
+                        <a th:href="@{${#request.getAttribute('page').url}+'&pageNo='+${pageNo+1}}">
+                            >>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

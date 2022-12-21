@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script type="text/javascript" src="../static/script/myJs.js"></script>
+</head>
+<body id="page">
+<div>
+    <!--头部-->
+    <div class="header">
+
+        <div class="nv">
+            <!--分成上下两个搜索导航栏部分-->
+            <div class="hTop">
+                <div class="hTopL">
+                    <ul>
+                        <li>
+                            <a href="#">学生</a>
+                        </li>
+                        <li>
+                            <a href="#">教职工</a>
+                        </li>
+                        <li>
+                            <a href="#">未来学生</a>
+                        </li>
+                        <li>
+                            <a href="#">校友校董</a>
+                        </li>
+                        <li>
+                            <a href="#">招聘</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hTopR">
+                    <ul>
+                        <li>
+                            <a href="#">信息门户</a>
+                        </li>
+                        <li>
+                            <a href="#">图书馆</a>
+                        </li>
+                        <li>
+                            <a href="#">教育机构</a>
+                        </li>
+                        <li>
+                            <a href="#">English</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--用一个空div清除浮动带来的排版影响-->
+                <div style="clear: both"></div>
+            </div>
+
+            <div class="hBottom" style="margin-top: 20px;">
+                <div class="hBottomL">
+                    <ul>
+                        <li>
+
+                                <dl class="navDl">
+                                    <dt>
+                                        <a href="">
+                                            走进中南
+                                        </a>
+                                    </dt>
+                                    <dd class="secondHeader LsecondHeader">
+                                        <a href="">学校概况</a>
+                                        <a href="">历史沿用</a>
+                                        <a href="">学校领导</a>
+                                        <a href="">机构设置</a>
+                                        <a href="">数据中南</a>
+                                        <a href="">学校章程</a>
+
+                                    </dd>
+                                </dl>
+
+                        </li>
+                        <li>
+                            <dl class="navDl">
+                                <dt>
+                                    <a href="">
+                                        教育教学
+                                    </a>
+                                </dt>
+                                <dd class="secondHeader LsecondHeader">
+                                    <a href="">学校概况</a>
+                                    <a href="">历史沿用</a>
+                                    <a href="">学校领导</a>
+                                    <a href="">机构设置</a>
+                                    <a href="">数据中南</a>
+                                    <a href="">学校章程</a>
+
+                                </dd>
+                            </dl>
+
+                        </li>
+                        <li>
+                            <dl class="navDl">
+                                <dt>
+                                    <a href="">
+                                        学院学科
+                                    </a>
+                                </dt>
+                                <dd class="secondHeader LsecondHeader">
+                                    <a href="">学校概况</a>
+                                    <a href="">历史沿用</a>
+                                    <a href="">学校领导</a>
+                                    <a href="">机构设置</a>
+                                    <a href="">数据中南</a>
+                                    <a href="">学校章程</a>
+
+                                </dd>
+                            </dl>
+
+                        </li>
+                        <li>
+                            <dl class="navDl">
+                                <dt>
+                                    <a href="">
+                                        师资队伍
+                                    </a>
+                                </dt>
+                                <dd class="secondHeader LsecondHeader">
+                                    <a href="">学校概况</a>
+                                    <a href="">历史沿用</a>
+                                    <a href="">学校领导</a>
+                                    <a href="">机构设置</a>
+                                    <a href="">数据中南</a>
+                                    <a href="">学校章程</a>
+
+                                </dd>
+                            </dl>
+
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!--放中南Logo-->
+
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none;display: block;">
+                        <img src="../static/imgs/logo-1.png" class="img1">
+                    </a>
+                </div>
+
+
+                <div class="hBottomR">
+
+                    <ul>
+                        <li>
+                            <dl class="navDl">
+                                <dt>
+                                    <a href="">
+                                        科学研究
+                                    </a>
+                                </dt>
+                                <dd class="secondHeader RsecondHeader">
+                                    <a href="">学校概况</a>
+                                    <a href="">历史沿用</a>
+                                    <a href="">学校领导</a>
+                                    <a href="">机构设置</a>
+                                    <a href="">数据中南</a>
+                                    <a href="">学校章程</a>
+
+                                </dd>
+                            </dl>
+
+                        </li>
+                        <li>
+                            <dl class="navDl">
+                                <dt>
+                                    <a href="">
+                                        招生就业
+                                    </a>
+                                </dt>
+                                <dd class="secondHeader RsecondHeader">
+                                    <a href="">学校概况</a>
+                                    <a href="">历史沿用</a>
+                                    <a href="">学校领导</a>
+                                    <a href="">机构设置</a>
+                                    <a href="">数据中南</a>
+                                    <a href="">学校章程</a>
+
+                                </dd>
+                            </dl>
+
+                        </li>
+                        <li>
+                            <dl class="navDl">
+                                <dt>
+                                    <a href="">
+                                        合作交流
+                                    </a>
+                                </dt>
+                                <dd class="secondHeader RsecondHeader">
+                                    <a href="">学校概况</a>
+                                    <a href="">历史沿用</a>
+                                    <a href="">学校领导</a>
+                                    <a href="">机构设置</a>
+                                    <a href="">数据中南</a>
+                                    <a href="">学校章程</a>
+
+                                </dd>
+                            </dl>
+
+                        </li>
+                        <li>
+                            <dl class="navDl">
+                                <dt>
+                                    <a href="">
+                                        学生天地
+                                    </a>
+                                </dt>
+                                <dd class="secondHeader RsecondHeader">
+                                    <a href="">学校概况</a>
+                                    <a href="">历史沿用</a>
+                                    <a href="">学校领导</a>
+                                    <a href="">机构设置</a>
+                                    <a href="">数据中南</a>
+                                    <a href="">学校章程</a>
+
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div style="clear: both"></div>
+            </div>
+        </div>
+
+        <!--固定栏的搜索框部分-->
+        <div class="searchBox" style="display: none">
+            <form action="">
+                <input type="text" name="" id="soInput">
+                <button type="submit" class="sub-so-btn"><a href="javascript:void(0);"
+                                                            style="display: inline-block;width: 100%;height: 100%"></a>
+                </button>
+            </form>
+        </div>
+        <!--取消超链接的跳转-->
+        <a href="javascript:void(0);" class="so-btn" id="soId"></a>
+
+
+    </div>
+
+
+
+    <!--轮播大横幅-->
+    <!--    <script src="../static/script/banner/lunbo.js", type="text/javascript"></script>-->
+
+    <div class="banner">
+        <a href="">
+            <img id="bImg" src="../static/imgs/banner/bannerImg1.png" alt="图片加载中">
+        </a>
+
+
+        <ul class="banner_list_ul">
+            <li>
+                <button class="bannerBtn" value="1"></button>
+            </li>
+            <li>
+                <button class="bannerBtn" value="2"></button>
+            </li>
+            <li>
+                <button class="bannerBtn" value="3"></button>
+            </li>
+        </ul>
+
+    </div>
+    <!--小插曲-->
+    <div>
+        <!--右侧导航栏-->
+        <div class="fright">
+            <dl id="frightUl" style="list-style-type: none;width: 50px;text-align:center;">
+                <li>
+                    <a href="">
+                        <img src="../static/imgs/fright1.png" style="width: 50px;height: 50px;vertical-align:middle;">
+                        <span class="fright_sp">校内通知</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../static/imgs/fright2.png" style="width: 50px;height: 50px;vertical-align:middle;">
+                        <span  class="fright_sp">校内公文</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../static/imgs/fright3.png" style="width: 50px;height: 50px;vertical-align:middle;">
+                        <span  class="fright_sp">每周会议</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../static/imgs/fright4.png" style="width: 50px;height: 50px;vertical-align:middle;">
+                        <span  class="fright_sp">中大信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../static/imgs/fright5.png" style="width: 50px;height: 50px;vertical-align:middle;">
+                        <span  class="fright_sp">中南邮箱</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../static/imgs/fright6.png" style="width: 50px;height: 50px;vertical-align:middle;">
+                        <span  class="fright_sp">信息门户</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../static/imgs/fright7.png" style="width: 50px;height: 50px;vertical-align:middle;">
+                        <span  class="fright_sp">办事大厅</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="../static/imgs/hArrow.png" alt="" style="width: 50px;height: 50px;cursor: pointer" id="hArrow">
+                </li>
+            </dl>
+        </div>
+
+        <!--返回顶部的按钮-->
+        <a href="#page">
+            <div id="returnTopDiv">
+
+            </div>
+        </a>
+
+    </div>
+    
+    <!--主体部分-->
+    <div class="main" style="width: 100%;">
+        <!--中南要闻-->
+        <div class="main1">
+            <div style="width: 80%;margin: 0 auto">
+                <div class="main1_head">
+                    <span style="font-size: 33px;color: #0852a2;line-height: 50px;">中南要闻</span>
+                    <span style="position: absolute;right: 10%">
+                    <a href="" >
+                        <i></i>
+                        更多
+                    </a>
+                </span>
+                </div>
+                <div class="main1_body" style="overflow: hidden">
+                    <div class="main1_body_left">
+
+
+                        <div class="wp">
+                            <a href="">
+                                <div class="pic">
+                                    <img src="../static/imgs/main_banner/img1.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>【学习二十大】学校召开党委理论学习中心组（扩大）学…</h4>
+                                    <span>2022-10-27</span>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="pic">
+                                    <img src="../static/imgs/main_banner/img2.png" alt="">
+                                </div>
+                                <div class="txt">
+                                    <h4>【喜迎二十大】当青春遇上二十大</h4>
+                                    <span>2022-10-17</span>
+                                </div>
+                            </a>
+<!--                            <a href="">-->
+<!--                                <div class="pic">-->
+<!--                                    <img src="../static/imgs/main_banner/img3.png" alt="">-->
+<!--                                </div>-->
+<!--                                <div class="txt">-->
+<!--                                    <h4>【喜迎二十大】中南师生热议党的二十大胜利召开</h4>-->
+<!--                                    <span>2022-10-16</span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                            <a href="">-->
+<!--                                <div class="pic">-->
+<!--                                    <img src="../static/imgs/main_banner/img4.png" alt="">-->
+<!--                                </div>-->
+<!--                                <div class="txt">-->
+<!--                                    <h4>个体化诊疗技术国家工程研究中心揭牌</h4>-->
+<!--                                    <span>2022-9-19</span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    <div class="main1_body_right">
+                        <ul class="p-list1">
+                            <li>
+                                <a href="" title="【喜迎二十大】专题">
+                                    <div class="bigFont">【喜迎二十大】专题</div>
+                                    <span class="date">
+                                        <img src="../static/imgs/calendarImg.png" alt="">
+                                        2022-10-10
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="中南大学四届党委第一轮巡视工作动员部署会召开">
+                                    <div class="bigFont">中南大学四届党委第一轮巡视工作动员部署会召开</div>
+                                    <span class="date">
+                                        <img src="../static/imgs/calendarImg.png" alt="">
+                                        2022-10-10
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="中南大学与中国电子科技集团公司第四十八研究所签订产学研合作协议">
+                                    <div class="bigFont">中南大学与中国电子科技集团公司第四十八研究所签订产学研合作协议</div>
+                                    <span class="date">
+                                        <img src="../static/imgs/calendarImg.png" alt="">
+                                        2022-10-10
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="【2022新生季】军训收官：再见，迷彩时光">
+                                    <div class="bigFont">【2022新生季】军训收官：再见，迷彩时光</div>
+                                    <span class="date">
+                                        <img src="../static/imgs/calendarImg.png" alt="">
+                                        2022-10-10
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="李建成到湘雅三医院调研">
+                                    <div class="bigFont">李建成到湘雅三医院调研</div>
+                                    <span class="date">
+                                        <img src="../static/imgs/calendarImg.png" alt="">
+                                        2022-10-10
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="【学习二十大】学校召开党委理论学习中心组（扩大）学习会 专题学习党的二十大精神">
+                                    <div class="bigFont">【学习二十大】学校召开党委理论学习中心组（扩大）学习会 专题学习党的二十大精神</div>
+                                    <span class="date">
+                                        <img src="../static/imgs/calendarImg.png" alt="">
+                                        2022-10-10
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="【学习二十大】易红讲新生思政课：深入学习贯彻党的二十大精神，让青春在中南绽放绚丽之花">
+                                    <div class="bigFont">【学习二十大】易红讲新生思政课：深入学习贯彻党的二十大精神，让青春在中南绽放绚丽之花</div>
+                                    <span class="date">
+                                        <img src="../static/imgs/calendarImg.png" alt="">
+                                        2022-10-10
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" title="【学习二十大】中南大学组织参加教育部直属系统传达学习党的二十大精神大会">
+                                    <div class="bigFont">【学习二十大】中南大学组织参加教育部直属系统传达学习党的二十大精神大会</div>
+                                    <span class="date">
+                                        <img src="../static/imgs/calendarImg.png" alt="">
+                                        2022-10-10
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="main1Ul">
+                            <li value="0"></li>
+                            <li value="1"></li>
+                            <!--                            <li value="3"></li>-->
+                            <!--                            <li value="4"></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--学术讲座-->
+        <div class="main2">
+            <h2 style="text-align: center;color: #0852a2">
+                学术讲座
+            </h2>
+            <div style="margin: 0 80px">
+                <ul class="main2Ul">
+                    <li>
+                        <div class="date2">
+                            <p style="text-align:center;color: orange;font-size:22px;">01</p>
+                            <p>2022-11</p>
+                            <p style="text-align: center">周二</p>
+                        </div>
+                        <div class="txt2">
+                            <h3>中南大学名师名家学术论坛-基于新策略的心脑血管疾病基础与转化研究</h3>
+                            <div>
+                            <p>陆军军医大学 李晓辉 教授</p>
+                            <p style="color: #0059b9">2022年11月1日 10:30</p>
+                            <p>湘雅医学院新校区福庆楼学术报告厅</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date2">
+                            <p style="text-align:center;color: orange;font-size:22px;">01</p>
+                            <p>2022-11</p>
+                            <p style="text-align: center">周二</p>
+                        </div>
+                        <div class="txt2">
+                            <h3>中南大学名师名家学术论坛-现代中药与天然药物研发理论与实践</h3>
+                            <div>
+                                <p>杭州师范大学 谢恬 教授</p>
+                                <p style="color: #0059b9">2022年11月1日 9:30</p>
+                                <p>湘雅医学院新校区福庆楼学术报告厅</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date2">
+                            <p style="text-align:center;color: orange;font-size:22px;">30</p>
+                            <p>2022-10</p>
+                            <p style="text-align: center">周二</p>
+                        </div>
+                        <div class="txt2">
+                            <h3>中南大学名师名家学术论坛-深度数字化时代的数字鸿沟概念体系建构</h3>
+                            <div>
+                                <p>浙江大学 韦路 教授</p>
+                                <p style="color: #0059b9">2022年10月30日 10:00</p>
+                                <p>湘雅医学院新校区福庆楼学术报告厅</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--数据中南-->
+        <div class="main3">
+
+        </div>
+    </div>
+
+    <!--页脚部分-->
+    <div class="footer">
+
+        <div class="ft1">
+            <dl>
+                <dt class="ft_dt">
+                    <span class="ft_img_sp" style="background-image:url(../static/imgs/i-q17.png)"></span>
+
+                    <span class="ft_font_sp">常用网站</span>
+                    <span class="arrow" id="ftSp1"></span>
+                </dt>
+                <dd >
+                    <div class="ft1_down">
+                        <a href="">校内导航</a>
+                        <a href="">信息公开网</a>
+                        <a href="">校友总会</a>
+                        <a href="">教育基金会</a>
+                        <a href="">中南新闻网</a>
+                        <a href="">学术期刊</a>
+                        <a href="">中南大学科技园</a>
+                        <a href="">本科生院</a>
+                        <a href="">研究生院</a>
+                        <a href="">科学研究部</a>
+                        <a href="">阳光体育</a>
+                        <a href="">图书馆</a>
+                        <a href="">档案馆</a>
+                        <a href="">湘雅医学院</a>
+                        <a href="">铁道校区</a>
+                        <a href="">后勤服务</a>
+                        <a href="">采购与招标管理中心</a>
+                        <a href="">附属医院</a>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt class="ft_dt">
+                    <span class="ft_img_sp" style="background-image:url(../static/imgs/i-q18.png)"></span>
+                    <span class="ft_font_sp">常用系统</span>
+                    <span class="arrow" id="ftSp2"></span>
+                </dt>
+                <dd>
+                    <div class="ft1_down">
+                        <a href="">校内导航</a>
+                        <a href="">信息公开网</a>
+                        <a href="">校友总会</a>
+                        <a href="">教育基金会</a>
+                        <a href="">中南新闻网</a>
+                        <a href="">学术期刊</a>
+                        <a href="">中南大学科技园</a>
+                        <a href="">本科生院</a>
+                        <a href="">研究生院</a>
+                        <a href="">科学研究部</a>
+                        <a href="">阳光体育</a>
+                        <a href="">图书馆</a>
+                        <a href="">档案馆</a>
+                        <a href="">湘雅医学院</a>
+                        <a href="">铁道校区</a>
+                        <a href="">后勤服务</a>
+                        <a href="">采购与招标管理中心</a>
+                        <a href="">附属医院</a>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt class="ft_dt">
+                    <span class="ft_img_sp" style="background-image:url(../static/imgs/i-q19.png)"></span>
+                    <span class="ft_font_sp">常用信息</span>
+                    <span class="arrow" id="ftSp3"></span>
+                </dt>
+                <dd>
+                    <div class="ft1_down">
+                        <a href="">校内导航</a>
+                        <a href="">信息公开网</a>
+                        <a href="">校友总会</a>
+                        <a href="">教育基金会</a>
+                        <a href="">中南新闻网</a>
+                        <a href="">学术期刊</a>
+                        <a href="">中南大学科技园</a>
+                        <a href="">本科生院</a>
+                        <a href="">研究生院</a>
+                        <a href="">科学研究部</a>
+                        <a href="">阳光体育</a>
+                        <a href="">图书馆</a>
+                        <a href="">档案馆</a>
+                        <a href="">湘雅医学院</a>
+                        <a href="">铁道校区</a>
+                        <a href="">后勤服务</a>
+                        <a href="">采购与招标管理中心</a>
+                        <a href="">附属医院</a>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt class="ft_dt">
+                    <span class="ft_img_sp" style="background-image:url(../static/imgs/i-q20.png)"></span>
+                    <span class="ft_font_sp">常用链接</span>
+                    <span class="arrow" id="ftSp4"></span>
+                </dt>
+                <dd>
+                    <div class="ft1_down">
+                        <a href="">校内导航</a>
+                        <a href="">信息公开网</a>
+                        <a href="">校友总会</a>
+                        <a href="">教育基金会</a>
+                        <a href="">中南新闻网</a>
+                        <a href="">学术期刊</a>
+                        <a href="">中南大学科技园</a>
+                        <a href="">本科生院</a>
+                        <a href="">研究生院</a>
+                        <a href="">科学研究部</a>
+                        <a href="">阳光体育</a>
+                        <a href="">图书馆</a>
+                        <a href="">档案馆</a>
+                        <a href="">湘雅医学院</a>
+                        <a href="">铁道校区</a>
+                        <a href="">后勤服务</a>
+                        <a href="">采购与招标管理中心</a>
+                        <a href="">附属医院</a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="ft2">
+
+            <div class="ft2_left">
+                <div class="ft_logo">
+                    <a href="">
+                        <img src="../static/imgs/fd_txt.png" alt=""
+                             style="width: 250px;height: 100px;vertical-align: middle;">
+                    </a>
+                </div>
+                <div class="fd_font" style="">
+
+                    <div style="width: inherit;height: 30px;">
+                        <span>通信地址: 湖南省长沙市麓山南路932号</span>
+                        <span>邮政编码: 410083</span>
+                    </div>
+                    <div style="width: inherit;height: 30px;">
+                        <span>校内电话查询: 0731-88876114</span>
+                        <span>意见反馈邮箱：homepage@csu.edu.cn</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="tuBiao">
+                <a href="">
+                    <img src="../static/imgs/a1.png" alt="1" class="tuBiaoImg">
+                    <div class="QRCode">
+                        <img class="QRCodeImg " src="../static/imgs/web3.png" alt="" >
+                    </div>
+                </a>
+                <a href="">
+                    <img src="../static/imgs/a2.png" alt="2" class="tuBiaoImg">
+                    <div class="QRCode">
+                        <img class="QRCodeImg" src="../static/imgs/web4.png" alt="" >
+                    </div>
+                </a>
+                <a href="">
+                    <img src="../static/imgs/a3.png" alt="3" class="tuBiaoImg">
+                    <div class="QRCode">
+                        <img src="../static/imgs/web5.png" alt="" class="QRCodeImg">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <div class="ft3">
+
+            <div class="normalInf">湘ICP备05005659号-1</div>
+            <div class="normalInf">湘教QS3-200505-00020</div>
+            <div class="normalInf">中南大学版权所有</div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

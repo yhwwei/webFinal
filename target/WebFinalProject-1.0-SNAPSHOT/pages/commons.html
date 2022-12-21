@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--公共页面抽取-->
+<head th:fragment="commonHeader">
+    <!--定义相对路径-->
+    <base th:href="@{'location.href=\'' + ${#httpServletRequest.getContextPath()} + '/'}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+</body>
+</html>

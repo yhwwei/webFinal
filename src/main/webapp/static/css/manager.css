@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #7a7676;
+    line-height: 20px;
+    overflow-x: hidden;
+    font-size: 14px;
+}
+.sticky-left-side {
+    background: #424f63;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 100;
+}
+.left-side {
+    width: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.managerTable {
+    background-color: #353f4f;
+
+    margin-top: 20px;
+}
+.managerTable >a{
+    color: #65cea7;
+    text-decoration: none;
+}
+.managerTable i {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    background: url("../../static/imgs/tableIcon.png") center no-repeat;
+}
+.managerTable span:after {
+    position: relative;
+    display: inline-block;
+    left: 80px;
+    content: url("../../static/imgs/minus.png");
+}
+.sub-menu-list {
+    font-size: 13px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #353f4f;
+}
+.sub-menu-list li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    height: 40px;
+    line-height: 40px;
+}
+.sub-menu-list li a {
+    color: white;
+    padding: 10px 5px 10px 50px;
+    text-decoration: none;
+}
+
+.main-content {
+    margin-left: 240px;
+    background: #eff0f4;
+    min-height: 90vh;
+    padding-top: 50px;
+}
+.header-section {
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 240px;
+    width: 100%;
+    z-index: 100;
+    height: 50px;
+}
+.form-control {
+    box-shadow: none;
+    float: left;
+    font-size: 14px;
+    margin: 7px 0 0 40px;
+    padding: 10px;
+    width: 266px;
+    border-radius: 5px;
+}
+.showUser {
+    position: absolute;
+    margin-top: 5px;
+    right: 100px;
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    cursor: pointer;
+}
+.showUser img{
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+.showUser span {
+    display: inline-block;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-left: 10px;
+    float: left;
+    line-height: 40px;
+}
+.showUser span:after{
+    content: url("../../static/imgs/downArrow.png");
+}
+.wrapper,.panel-heading,.panel-body,.panel-page{
+    padding: 15px;
+}
+.wrapper {
+    background: white;
+    margin: 66px auto 0;
+    width: 90%;
+}
+.panel-heading {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    color: #535351;
+    font-size: 22px;
+    font-weight: bold;
+}
+.panel-body table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    clear: both;
+    width: 100%;
+
+}
+.panel-body table tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+
+}
+.panel-body table th {
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 10px;
+}
+.panel-body table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.panel-body table tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.btnDelete {
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    width: 46px;
+    height: 30px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #d2322d;
+    border-color: #ac2925;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.btnDelete:hover{
+    outline: none;
+    transition: all 0.3s;
+    background: #ac2925;
+}
+.panel-page span {
+    color: red;
+}
+.pageDiv {
+    display: inline-block;
+    float: right;
+}
+.pageDiv ul {
+    list-style-type: none;
+    text-align: center;
+}
+.pageDiv ul li {
+    font-size: 16px;
+
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+    width: 40px;
+    height: 20px;
+    border: 1px solid grey;
+}
+.pageDiv ul li:hover{
+    background: lightblue;
+    color: white;
+}
+.pageDiv ul li a{
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+.indexPage {
+    background: #65cea7;
+    color: white;
+    pointer-events:none;
+}
